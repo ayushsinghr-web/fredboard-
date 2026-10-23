@@ -93,16 +93,36 @@ input[type=range]{width:100%;accent-color:var(--br)}
 .hg article::before{content:"";position:absolute;top:-2px;left:0;width:56px;height:3px;background:var(--br)}
 .hg h3{margin-bottom:8px}.hg p{color:var(--mu)}
 footer{padding:20px 20px 50px;color:var(--mu);font-size:.9rem;max-width:1080px;margin:auto}
+nav{flex-wrap:wrap;gap:12px 24px}
+.logo{text-decoration:none;color:var(--tx)}
+.nv{display:flex;flex-wrap:wrap;gap:6px 18px}.nv a{color:var(--mu);text-decoration:none;font-size:.92rem}.nv a:hover{color:var(--tx)}
+#pg{padding-top:20px;padding-bottom:60px}#pg a{color:var(--br)}#pg a.btn{color:#1a1008}
+.t{font:800 clamp(2.2rem,6vw,3.6rem)/1.05 var(--hd);letter-spacing:-.03em;margin:14px 0 18px}.t small{display:block;font:400 1.05rem 'DM Sans',sans-serif;color:var(--mu);letter-spacing:0;margin-top:6px}
+.art{max-width:720px}.art p,.art li{color:var(--mu);margin-bottom:12px}.art ol{padding-left:1.3em}.art h2,#pg h2{margin:34px 0 14px}
+.lst{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+#pg .lst a{display:block;border:1px solid var(--ln);border-radius:18px;padding:20px;text-decoration:none;color:var(--tx);font-weight:700;transition:border-color .2s}#pg .lst a:hover{border-color:var(--br)}.lst small{display:block;font-weight:400;color:var(--mu)}
+.pats{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.pat{border:1px solid var(--ln);border-radius:20px;padding:20px;background:color-mix(in srgb,var(--pn) 90%,transparent)}.pat p{color:var(--mu);margin:4px 0 14px}
+.pp{width:100%;margin-top:14px;border:1px solid var(--ln);background:none;border-radius:99px;padding:.55em;font-weight:600;transition:.2s}.pp:hover{border-color:var(--br);color:var(--br)}
+.chord[data-n]{cursor:pointer}
+textarea{width:100%;background:var(--pn);color:var(--tx);border:1px solid var(--ln);border-radius:16px;padding:14px;font:inherit;margin:8px 0 16px}
+footer .fl{margin-bottom:14px}.tn.ok #st{color:var(--tl)}
+.sbs{display:block;max-width:360px;margin:30px auto 0}.hs{width:100%;height:auto;display:block;overflow:visible}
+.hs .sb{display:inline;cursor:pointer}.hs .sb.ref{transform:none}.hs .st{stroke:#d9c7a8;stroke-width:1.6}
+.hs .lc{fill:var(--pn);stroke:var(--ln);stroke-width:2;transition:.2s}.hs .sb:hover .lc,.hs .sb.ref .lc{stroke:var(--br)}
+.hs text{text-anchor:middle;font:700 18px 'DM Sans',sans-serif;fill:var(--tx);pointer-events:none}
+.hs .sb.on .lc{fill:var(--tx);stroke:var(--tx)}.hs .sb.on text{fill:var(--bg)}
+.hs.ok .sb.on .lc{fill:var(--tl);stroke:var(--tl)}.hs.ok .sb.on text{fill:#08201c}
 @media(max-width:560px){.beats i{width:36px;height:36px}.slot{padding-top:10px}}
 @media(prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition:none!important}}
 </style></head><body>
 <canvas id="fx" aria-hidden="true"></canvas>
-<nav class="wrap"><div class="logo"><i></i>GuitarHub  Dev-Ayushh</div><button class="ghost" id="th">Switch theme</button></nav>
-<main>
+<nav class="wrap"><a class="logo" href="#home"><i></i>Guitar Excellence Hub</a><div class="nv"><a href="#home">Home</a><a href="#chords">Chords</a><a href="#strumming">Strumming</a><a href="#songs">Songs</a><a href="#guides">Guides</a><a href="#about">About</a><a href="#contact">Contact</a></div><button class="ghost" id="th">Switch theme</button></nav>
+<main id="home">
 <header class="wrap hero"><h1><span style="--i:1">See the chord.</span><span style="--i:2">Hear the chord.</span><span style="--i:3">Play the song.</span></h1>
 <p class="sub">Tune up with the built-in tuner, then pick a beginner song, study each chord shape, press play to hear it, then strum along with a live metronome. Move your cursor across the strings behind this page to pluck them.</p>
 <div class="cta"><a class="btn" href="#tuner">Tune your guitar</a><a href="#studio">Practice a song</a><a href="#habits">Read the three habits</a></div></header>
-<section id="tuner" class="wrap"><div class="pn"><h2>Tune your guitar</h2><p style="color:var(--mu);margin:-8px 0 20px;max-width:60ch">Tap a string to hear the note it should make. Or start the tuner, pluck one string at a time, and move the needle to the center.</p><div class="sbs" id="sbs"></div><div class="tn" id="tn"><div class="rd"><b id="nn">-</b><span id="hz">Press start and allow the microphone</span></div><div class="mt"><i id="nd"></i></div><div class="ms"><span>Flat</span><span id="st" aria-live="polite">Standard tuning: E A D G B e</span><span>Sharp</span></div><button class="btn" id="mic">Start tuner</button></div></div></section>
+<section id="tuner" class="wrap"><div class="pn"><h2>Tune your guitar</h2><p style="color:var(--mu);margin:-8px 0 20px;max-width:60ch">Tap a letter on the headstock to hear the note that string should make. Or start the tuner, pluck one string at a time, and move the needle to the center.</p><div class="tn" id="tn"><div class="rd"><b id="nn">-</b><span id="hz">Press start and allow the microphone</span></div><div class="mt"><i id="nd"></i></div><div class="ms"><span>Flat</span><span id="st" aria-live="polite">Standard tuning: E A D G B e</span><span>Sharp</span></div><button class="btn" id="mic">Start tuner</button></div><div class="sbs" id="sbs"></div></div></section>
 <section id="studio" class="wrap">
 <div class="pn"><h2>Pick a song</h2><div class="tabs" id="tabs"></div>
 <div class="tr"><button class="play" id="go" aria-label="Start or stop the metronome"></button>
@@ -118,8 +138,8 @@ footer{padding:20px 20px 50px;color:var(--mu);font-size:.9rem;max-width:1080px;m
 <article><h3>The Pivot Finger</h3><p>When you switch from Am to C, keep your index and middle fingers glued to the fretboard. Only your ring finger moves, from the 2nd fret of the G string up to the 3rd fret of the A string.</p></article>
 <article><h3>The Hover Rule</h3><p>Keep your fingers curved and hovering just above the frets between chords. The shorter the trip back to the strings, the faster and cleaner the change.</p></article>
 <article><h3>The 2-Minute Silent Switch</h3><p>Set a timer and swap between two chord shapes without strumming at all. Go slowly, check that every string rings, then repeat. This is how muscle memory gets built.</p></article></div></section>
-</main>
-<footer>Chord sounds are synthesized live in your browser. Tune your guitar to standard tuning (E A D G B e) and compare by ear. Strumming patterns are beginner-friendly adaptations.</footer>
+</main><main id="pg" class="wrap" hidden></main>
+<footer><div class="nv fl"><a href="#home">Home</a><a href="#chords">Chords</a><a href="#strumming">Strumming</a><a href="#songs">Songs</a><a href="#guides">Guides</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#privacy">Privacy policy</a></div>Chord sounds are synthesized live in your browser. Tune your guitar to standard tuning (E A D G B e) and compare by ear. Strumming patterns are beginner-friendly adaptations. © 2026 Guitar Excellence Hub</footer>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const PL='<svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',SP='<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
@@ -159,7 +179,7 @@ $('#chords').innerHTML=song.c.map((n,i)=>`<div class="chord"><em>Bar ${i+1}</em>
 $('#strum').innerHTML=[...song.p].map((c,i)=>`<div class="slot ${c=='.'?'r':c}"><svg viewBox="0 0 24 48"><path d="${AR[c]}"/></svg><b>${'1&2&3&4&'[i].replace('&','&amp;')}</b></div>`).join('');
 $('#tt').textContent=song.tt;$('#tp').textContent=song.tp}
 /* ---------- events ---------- */
-document.addEventListener('click',e=>{const t=e.target.closest('.tab,.pl,#go,#th');if(!t)return;
+document.addEventListener('click',e=>{const t=e.target.closest('.tab,.pl,#go,#th,.chord[data-n]');if(!t)return;
 if(t.id=='go')return go();
 if(t.id=='th'){const r=document.documentElement;r.dataset.theme=r.dataset.theme=='light'?'dark':'light';return}
 if(t.classList.contains('tab'))return load(t.dataset.k);
@@ -185,6 +205,7 @@ addEventListener('resize',rs);rs();requestAnimationFrame(draw);
 /* ---------- tuner ---------- */
 const NM=['E','A','D','G','B','e'];let mi,sm=0,ls=-1,miss=0;
 $('#sbs').innerHTML=op.map((f,i)=>`<button class="sb" data-i="${i}" aria-label="Play string ${6-i}, ${NM[i]}"><b>${NM[i]}</b><small>String ${6-i}</small><small>${Math.round(f)} Hz</small></button>`).join('');
+$('#sbs').innerHTML='<svg class="hs" viewBox="0 0 360 480" role="group" aria-label="Guitar headstock"><defs><linearGradient id="wd" x1="0" x2="1"><stop offset="0" stop-color="#7a3f22"/><stop offset=".5" stop-color="#a65b34"/><stop offset="1" stop-color="#7a3f22"/></linearGradient></defs><path d="M112 80Q180 52 248 80L270 104Q276 116 266 134L246 450H114L94 134Q84 116 90 104Z" fill="url(#wd)" stroke="#f1e7d6" stroke-width="3"/><path d="M168 450Q168 380 180 350Q192 380 192 450Z" fill="#1a0f0c"/><rect x="114" y="446" width="132" height="8" fill="#f1e7d6"/>'+op.map((f,i)=>{const L=i<3,y=[240,180,120,120,180,240][i],x=L?138:222,e=L?96:264,lx=L?32:328;return `<g class='sb' data-i='${i}' role='button' aria-label='Play string ${6-i}, ${NM[i]}'><line class='st' x1='${x}' y1='${y}' x2='${150+i*12}' y2='446'/><line x1='${x}' y1='${y}' x2='${e}' y2='${y}' stroke='#c9ccd1' stroke-width='6'/><circle cx='${x}' cy='${y}' r='7' fill='#d8d3c8'/><ellipse cx='${L?84:276}' cy='${y}' rx='16' ry='21' fill='#c9ccd1' stroke='#7b7f87'/><circle class='lc' cx='${lx}' cy='${y}' r='24'/><text x='${lx}' y='${y+6}'>${NM[i]}</text><circle cx='${lx}' cy='${y}' r='30' fill='transparent'/></g>`}).join('')+'</svg>';
 $('#sbs').onclick=e=>{const b=e.target.closest('.sb');if(!b)return;init();const i=+b.dataset.i;note(op[i],ctx.currentTime,.2,2.6);amp[i]=1;b.classList.add('ref');setTimeout(()=>b.classList.remove('ref'),600)};
 function pitch(b,sr){const n=b.length;let e=0;for(let i=0;i<n;i++)e+=b[i]*b[i];if(e/n<1e-4)return 0;
 const lo=sr/400|0,hi=Math.min(sr/70|0,n>>1),c=[];let mx=0;
@@ -194,7 +215,7 @@ const say=t=>$('#hz').textContent=t;
 function tl(){if(!mi)return;mi.an.getFloatTimeDomainData(mi.b);const f=pitch(mi.b,ctx.sampleRate);
 if(f>60&&f<420){miss=0;let bi=0,bc=1e9;op.forEach((t,i)=>{const c=1200*Math.log2(f/t);if(Math.abs(c)<Math.abs(bc)){bc=c;bi=i}});
 sm=bi==ls?sm*.55+bc*.45:bc;ls=bi;const c=Math.max(-50,Math.min(50,sm)),ok=Math.abs(sm)<5;
-$('#nn').textContent=NM[bi];$('#nd').style.left=50+c+'%';$('#tn').classList.toggle('ok',ok);
+$('#nn').textContent=NM[bi];$('#nd').style.left=50+c+'%';$('#tn').classList.toggle('ok',ok);$('#sbs').classList.toggle('ok',ok);
 say(f.toFixed(1)+' Hz, '+(sm>0?'+':'')+sm.toFixed(0)+' cents');$('#st').textContent=ok?'In tune':sm<0?'Too low: tighten the string':'Too high: loosen the string';
 $$('.sb').forEach((b,i)=>b.classList.toggle('on',i==bi))}
 else if(++miss>8){$('#nn').textContent='-';$('#nd').style.left='50%';$('#tn').classList.remove('ok');$$('.sb.on').forEach(b=>b.classList.remove('on'));$('#st').textContent='Pluck one string at a time'}
@@ -202,5 +223,46 @@ setTimeout(tl,60)}
 $('#mic').onclick=async()=>{if(mi){mi.st.getTracks().forEach(t=>t.stop());mi=null;$('#mic').textContent='Start tuner';say('Tuner stopped');return}
 try{init();const st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}}),an=ctx.createAnalyser();an.fftSize=4096;ctx.createMediaStreamSource(st).connect(an);mi={st,an,b:new Float32Array(4096)};$('#mic').textContent='Stop tuner';say('Pluck a string');miss=9;tl()}
 catch(e){say('The microphone is blocked here. Host the page or open it in its own tab and allow the microphone, or tune by ear with the string buttons.')}};
-$('#go').innerHTML=PL;load('riptide');
+/* ---------- pages ---------- */
+const EMAIL='ayushsinghraj6182.com',CT=['1','&amp;','2','&amp;','3','&amp;','4','&amp;'];
+'C|C major|x32010|032010;D|D major|xx0232|000132;E|E major|022100|023100;G|G major|320003|210003;A|A major|x02220|001230;Am|A minor|x02210|002310;Dm|D minor|xx0231|000231;Em|E minor|022000|023000;A7|A dominant 7|x02020|002030;B7|B dominant 7|x21202|021304;D7|D dominant 7|xx0212|000213;E7|E dominant 7|020100|020100;G7|G dominant 7|320001|320001;Cmaj7|C major 7|x32000|032000;Am7|A minor 7|x02010|002010;Em7|E minor 7|020000|020000;F|F major, barre|133211|134211;Bm|B minor, barre|x24432|013421;Bb|B-flat major, barre|x13331|012341'.split(';').forEach(s=>{const[a,n,f,g]=s.split('|');C[a]={n,f:[...f].map(x=>x=='x'?-1:+x),g:[...g].map(Number)}});
+const pr=h=>`<div class='art'>${h}</div>`,
+cd=n=>`<div class='chord' data-n='${n}'><h3>${n}</h3><small>${C[n].n}</small>${dia(C[n].f,C[n].g)}<button class='pl' data-n='${n}'>Hear it</button></div>`,
+sls=p=>[...p].map((c,i)=>`<div class='slot ${c=='.'?'r':c}'><svg viewBox='0 0 24 48'><path d='${AR[c]}'/></svg><b>${CT[i]}</b></div>`).join(''),
+pat=(n,p,b,d,cs='G')=>`<div class='pat' data-p='${p}' data-b='${b}' data-cs='${cs}'><h3>${n}</h3><p>${d} ${b} BPM.</p><div class='strum'>${sls(p)}</div><button class='pp'>Play pattern</button></div>`;
+const PT=[['Four steady downs','D.D.D.D.',70,'The first pattern to learn. Keep your arm swinging evenly.'],['Eighth-note downs','DDDDDDDD',70,'A down strum on every half beat builds a steady arm.'],['Folk campfire','D.DU.UDU',100,'The classic: down, down-up, up-down-up.'],['Pop ballad','D.D.DUDU',85,'Spacious at the start, busier toward the end of the bar.'],['Rock eighths','DUDUDUDU',110,'A constant down-up motion. Accent the downs.'],['Reggae offbeat','.U.U.U.U',80,'Only the upstrokes on the “&”. Short and light.'],['Country chick','D.xUD.xU',95,'Down, then a muted slap, then up. Keep the slap short.'],['Muted funk','DxUxDxUx',90,'Alternate open strums with muted slaps for a tight groove.']];
+const GD={
+'guide-am-c':['How to switch from Am to C',['Am and C share two fingers. In both chords your index finger sits on the 1st fret of the B string and your middle finger sits on the 2nd fret of the D string.','Keep those two fingers glued down. Only your ring finger moves, from the 2nd fret of the G string to the 3rd fret of the A string. Everything else stays still.','Practice the swap silently for two minutes, then add one slow strum on beat 1 at 60 BPM. The most common mistake is lifting every finger and rebuilding the chord from scratch.']],
+'guide-g-c':['How to switch from G to C',['G and C share no anchor finger, so think of the whole hand moving as one shape. In G your fingers sit on the low E, A and high E strings. In C they sit on the A, D and B strings.','Each finger takes a short step: the index goes from the 2nd fret of the A string to the 1st fret of the B string, the middle from the low E string to the D string, and the ring from the high E string to the 3rd fret of the A string.','Say “G, C, G, C” out loud and switch on every fourth beat at 60 BPM. Speed comes from relaxed fingers, not from pressing harder.']],
+'guide-g-em':['How to switch from G to Em',['G and Em share one note: the 2nd fret of the A string. Leave a finger there and the change gets much easier.','From G, keep the finger on the A string, move the finger on the low E string over to the 2nd fret of the D string, and lift the finger on the high E string. That is the whole change.','Once it feels easy, switch to the standard Em fingering with your middle and ring fingers. Drill it silently, then with a slow down strum on every beat.']],
+'guide-tune':['How to tune your guitar',['Standard tuning from the thickest string to the thinnest is E, A, D, G, B, E. Use the tuner on the home page: press Start tuner, allow the microphone and pluck one open string at a time.','If the display says the string is too low, tighten it by turning the peg slowly. If it is too high, loosen it. Finish by turning up to the note from below, which keeps the string stable.','Go through all six strings, then check the first one again, because tightening one string slightly shifts the others. New strings stretch, so expect to retune often during the first week.']],
+'guide-strum':['How to strum',['Strumming comes from a loose wrist, like turning a doorknob, not from the whole arm. Keep your hand moving in a steady down and up swing, even when you are not hitting the strings.','Down strums land on the numbers (1, 2, 3, 4) and up strums land on the “&”. When a pattern skips a strum, keep your hand moving and just miss the strings.','Start with four slow down strums per bar, then add the ups. Count out loud and use the metronome on the home page at 60 BPM.']],
+'guide-week':['Your first week of guitar practice',['Ten to fifteen minutes a day beats one long session. Here is a simple week.','Day 1: tune up and learn Am and Em. Day 2: learn C and G. Day 3: silent switches between all four chords. Day 4: four steady down strums on each chord. Day 5: the folk pattern on a single chord. Day 6: the Riptide chord progression. Day 7: play through your favorite song, then rest.','If a day feels hard, repeat it. Slow and clean always beats fast and messy.']]};
+const FO={riptide:'Three chords and one pivot finger make this the best first song. Am, G and C all fit in the first position.',stand:'Four open chords in the key of G. The challenge is staying relaxed when you change to D.',zombie:'Em, C, G and D at a slow tempo, which makes it ideal for practicing clean chord changes without rushing.'};
+const songPg=k=>{const s=S[k],u=[...new Set(s.c)];return [s.t+' on guitar: chords and strumming',`<a href='#songs'>All songs</a><h1 class='t'>${s.t}<small>${s.a}</small></h1>`+pr(`<p>${FO[k]}</p>`)+`<h2>Chords: ${u.join(', ')}</h2><div class='chords'>${u.map(cd).join('')}</div><h2>Strumming pattern</h2><div class='pats'>${pat(s.t+' groove',s.p,s.bpm,'Plays one chord per bar through '+s.c.join(', ')+'.',s.c.join(','))}</div>`+pr(`<h2>Practice plan</h2><ol><li>Tune up with the tuner on the home page.</li><li>Learn ${u[0]} on its own. Strum slowly and check that every string rings.</li><li>Add ${u.slice(1).join(' and ')} one at a time, then do the silent switch: change shapes without strumming for two minutes.</li><li>Play the pattern on one chord at 60 BPM, then change chord every bar.</li><li>Raise the tempo by 5 BPM at a time until you reach about ${s.bpm} BPM.</li></ol><div class='tip'><b>${s.tt}</b><br>${s.tp}</div><p>This page teaches chords and rhythm only. We do not publish lyrics, tabs or recordings, so listen to the original song and play along.</p>`)]};
+const P={};
+Object.keys(S).forEach(k=>P['song-'+k]=songPg(k));
+Object.keys(GD).forEach(k=>P[k]=[GD[k][0],`<a href='#guides'>All guides</a>`+pr(`<h1 class='t'>${GD[k][0]}</h1>${GD[k][1].map(x=>`<p>${x}</p>`).join('')}<p><a href='#studio'>Open the practice studio</a></p>`)]);
+P.songs=['Beginner songs',`<h1 class='t'>Beginner songs<small>Chords, strumming and a practice plan for each.</small></h1><div class='lst'>${Object.keys(S).map(k=>`<a href='#song-${k}'>${S[k].t}<small>${S[k].a}. Chords: ${[...new Set(S[k].c)].join(' ')}</small></a>`).join('')}</div>`];
+P.guides=['Beginner guitar guides',`<h1 class='t'>Beginner guides<small>Short, practical lessons.</small></h1><div class='lst'>${Object.keys(GD).map(k=>`<a href='#${k}'>${GD[k][0]}</a>`).join('')}</div>`];
+P.chords=['Guitar chord diagrams',`<h1 class='t'>Guitar chord diagrams<small>19 chords. Tap any chord to hear it.</small></h1>`+[['Open major chords','C D E G A'],['Open minor chords','Am Dm Em'],['Seventh chords','A7 B7 D7 E7 G7 Cmaj7 Am7 Em7'],['First barre chords','F Bm Bb']].map(([h,l])=>`<h2>${h}</h2><div class='chords'>${l.split(' ').map(cd).join('')}</div>`).join('')];
+P.strumming=['Strumming patterns',`<h1 class='t'>Strumming patterns<small>Eight patterns. Press play and watch each one light up.</small></h1><p style='color:var(--mu)'>Down arrows are down strums, up arrows are up strums, a cross is a muted slap and a dot is a rest. Count 1 & 2 & 3 & 4 &.</p><div class='pats'>${PT.map(([n,p,b,d])=>pat(n,p,b,d)).join('')}</div>`];
+P.about=['About',pr(`<h1 class='t'>About Guitar Excellence Hub</h1><p>Guitar Excellence Hub is a free practice companion for beginner guitarists. It combines a microphone tuner, interactive chord diagrams, a metronome and strumming patterns on one site, with short written guides that explain each step.</p><p>Every chord sound on this site is synthesized in your browser, so nothing is downloaded or recorded. Songs are taught through chord progressions and strumming rhythms only. We do not publish lyrics, tabs or recordings.</p><p>The goal is simple: help you play your first song within a week, with habits that keep you improving.</p>`)];
+P.contact=['Contact',pr(`<h1 class='t'>Contact</h1><p>Questions, corrections and song requests are welcome. Email <a href='mailto:${EMAIL}'>${EMAIL}</a>, or write your message below and open it in your email app.</p><textarea id='cm' rows='6' placeholder='Your message'></textarea><a class='btn' id='cs' href='mailto:${EMAIL}'>Open in my email app</a>`)];
+P.privacy=['Privacy policy',pr(`<h1 class='t'>Privacy policy</h1><p>Last updated: October 22, 2026.</p><h2>What we collect</h2><p>Guitar Excellence Hub has no accounts and does not ask for your name or email. If you email us, we use your message only to reply.</p><h2>Microphone</h2><p>The tuner asks for microphone access. Audio is analyzed live on your device to find the pitch. It is never recorded, stored or sent anywhere.</p><h2>Cookies and advertising</h2><p>This site may show ads from Google AdSense. Google and its partners may use cookies to show ads based on your visits to this and other sites. You can manage this at adssettings.google.com or opt out at aboutads.info.</p><h2>Third-party services</h2><p>Fonts are loaded from Google Fonts, which receives your IP address when the page loads.</p><h2>Children</h2><p>The site is not directed at children under 13 and we do not knowingly collect their data.</p><h2>Changes</h2><p>We may update this policy and will change the date above.</p><h2>Contact</h2><p>Questions: ${EMAIL}.</p>`)];
+/* ---------- pattern player + router ---------- */
+let sp;
+function stopPat(){if(!sp)return;clearInterval(sp.t);sp.b.querySelectorAll('.slot.on').forEach(e=>e.classList.remove('on'));sp.b.querySelector('.pp').textContent='Play pattern';const b=sp.b;sp=null;return b}
+function playPat(box){const was=stopPat();if(was===box)return;init();const p=box.dataset.p,cs=box.dataset.cs.split(','),el=box.querySelectorAll('.slot');let s=0,bar=0;
+const f=()=>{const c=p[s],ch=cs[bar%cs.length];el.forEach(e=>e.classList.remove('on'));el[s].classList.add('on');if(c!='.'){strum(ch,ctx.currentTime,c=='U'?'U':'D',c=='x'?.07:1.2);if(c!='x')pulse(ch,c=='U'?'U':'D')}if(s%2==0)click(ctx.currentTime,s==0);s++;if(s==8){s=0;bar++}};
+box.querySelector('.pp').textContent='Stop';sp={b:box,t:setInterval(f,30000/+box.dataset.b)};f()}
+const HM=['home','tuner','studio','habits'];
+function show(k){stopPat();const h=HM.includes(k)||!P[k];$('#home').hidden=!h;$('#pg').hidden=h;
+if(h){document.title='Guitar Excellence Hub: learn Riptide, Stand By Me and Zombie';HM.indexOf(k)>0?$('#'+k).scrollIntoView({behavior:'smooth'}):scrollTo(0,0)}
+else{document.title=P[k][0]+' | Guitar Excellence Hub';$('#pg').innerHTML=P[k][1];scrollTo(0,0)}
+try{history.replaceState(null,'','#'+k)}catch(e){}}
+document.addEventListener('click',e=>{const a=e.target.closest('a[href^="#"]'),p=e.target.closest('.pp');
+if(a){e.preventDefault();show(a.getAttribute('href').slice(1))}else if(p)playPat(p.closest('.pat'));else if(e.target.id=='cs')e.target.href='mailto:'+EMAIL+'?subject=Guitar%20Excellence%20Hub&body='+encodeURIComponent($('#cm').value)});
+addEventListener('hashchange',()=>show(location.hash.slice(1)||'home'));
+$('#go').innerHTML=PL;load('riptide');show(location.hash.slice(1)||'home');
 </script></body></html>
